@@ -5,6 +5,7 @@ const text = document.getElementById('text');
 const videoPlaylist = [
   'KnG2HF0_1w4', // galaxies
   '13Ab0al-goo', // space
+  'X4MVWsEizlE', // spinning earth
   // 'x4m9G_Q8arg', // wolves
   // 'C-COovgAm0s', // wolves
   // 'ZoPDzodh20M', // sunrise
@@ -16,28 +17,17 @@ const videoId =
       videoPlaylist.length - 1
     )
   ];
-const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&&showinfo=0&loop=1​`;
+const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=${videoId}`;
 wolfvid.src = videoUrl;
 
 window.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', () => {
     window.close();
   });
-  wolfvid.addEventListener('click', () => {
-    window.close();
-  });
-
   document.addEventListener('mousemove', () => {
     window.close();
   });
-  wolfvid.addEventListener('mousemove', () => {
-    window.close();
-  });
-
   document.addEventListener('keydown', () => {
-    window.close();
-  });
-  wolfvid.addEventListener('keydown', () => {
     window.close();
   });
 
@@ -117,6 +107,7 @@ window.addEventListener('DOMContentLoaded', () => {
     'Do you even meditate?',
     'Racial Profiling',
     'Oooh kay',
+    'Lonely at the top',
   ];
   let lastAnimationSet = null;
   const galaxyBrainText = (set, line) => {
