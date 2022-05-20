@@ -1,0 +1,24 @@
+{
+  "name": "samscreen",
+  "version": "1.0.0",
+  "description": "A screen saver for those who want Sam Harris in ridiculous positions with his ridiculous positions on their screen.",
+  "main": "main.js",
+  "scripts": {
+    "format": "prettier --write --ignore-unknown .",
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hperrin/samscreen.git"
+  },
+  "author": "Hunter Perrin <hperrin@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/hperrin/samscreen/issues"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^18.2.4",
+    "prettier": "^2.6.2"
+  }
+}
