@@ -21,7 +21,9 @@ const createWindow = () => {
   win.removeMenu();
   // win.webContents.openDevTools();
 
-  win.focus();
+  setTimeout(() => {
+    win.focus();
+  }, 0);
 };
 
 app.whenReady().then(() => {

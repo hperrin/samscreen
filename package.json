@@ -20,5 +20,8 @@
   "devDependencies": {
     "electron": "^18.2.4",
     "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
   }
 }

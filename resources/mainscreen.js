@@ -1,26 +1,21 @@
-const wolfvid = document.getElementById('wolfvid');
-const sam = document.getElementById('sam');
-const text = document.getElementById('text');
-
-const videoPlaylist = [
-  'KnG2HF0_1w4', // galaxies
-  '13Ab0al-goo', // space
-  'X4MVWsEizlE', // spinning earth
-  // 'x4m9G_Q8arg', // wolves
-  // 'C-COovgAm0s', // wolves
-  // 'ZoPDzodh20M', // sunrise
-];
-const videoId =
-  videoPlaylist[
-    Math.min(
-      Math.floor(Math.random() * videoPlaylist.length),
-      videoPlaylist.length - 1
-    )
-  ];
-const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=${videoId}`;
-wolfvid.src = videoUrl;
+/* Randomize array in-place using Durstenfeld shuffle algorithm */
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
 
 window.addEventListener('DOMContentLoaded', () => {
+  const video1 = document.getElementById('video1');
+  const video2 = document.getElementById('video2');
+  const attrib1 = document.getElementById('attrib1');
+  const attrib2 = document.getElementById('attrib2');
+  const sam = document.getElementById('sam');
+  const text = document.getElementById('text');
+
   document.addEventListener('click', () => {
     window.close();
   });
@@ -31,32 +26,178 @@ window.addEventListener('DOMContentLoaded', () => {
     window.close();
   });
 
-  let height = window.innerHeight;
-  let width = window.innerWidth;
-  let samWidth = sam.width;
-  let samleft = Math.random() * (width / 2 - samWidth) + width / 2;
-  const samTime = 5000;
-  const maxSamLargeWidth = width;
-  const maxSamMedWidth = samWidth * 1.5;
-  const maxSamSmallWidth = 100;
+  const videos = [
+    [
+      '012389379-Sheep-Domestic-Herd-Hd9233.mkv',
+      'Stock Footage provided by RockyMountain, from Pond5',
+    ],
+    [
+      '040329964-Flight-Galaxy.mkv',
+      'Stock Footage provided by kastomazer, from Pond5',
+    ],
+    [
+      '041069487-Time-Lapse-Pan-Mountain-Range-.mkv',
+      'Stock Footage provided by MountAiryFilms, from Pond5',
+    ],
+    [
+      '042686187-Starry-Night-Mountains-Timelap.mkv',
+      'Stock Footage provided by Viktar_Malyshchyts, from Pond5',
+    ],
+    [
+      '045015535-Solar-Storm-Northern-Lights-Ar.mkv',
+      'Stock Footage provided by erectus, from Pond5',
+    ],
+    [
+      '046274647-Neurons-3D-Animation-Blue-Back.mkv',
+      'Stock Footage provided by bildDOTbewegung, from Pond5',
+    ],
+    [
+      '047161060-Sketches-Space-Planetary-Nebul.mkv',
+      'Stock Footage provided by selfox, from Pond5',
+    ],
+    [
+      '052301651-Nubble-Lighthouse-Milky-Way-Ri H264hd1080.mkv',
+      'Stock Footage provided by MikeVersprill, from Pond5',
+    ],
+    [
+      '055266591-Hurricane-Tornado-Over-Earth-S H264hd1080.mkv',
+      'Stock Footage provided by Merlin74, from Pond5',
+    ],
+    [
+      '057032995-Milky-Way-Over-Trees-Yosemite-.mkv',
+      'Stock Footage provided by maikthomas, from Pond5',
+    ],
+    [
+      '057718207-Carina-Nebula-3-Dimensions-Hd.mkv',
+      'Stock Footage provided by Rebus_Productions, from Pond5',
+    ],
+    [
+      '061744311-Doctor-Examines-Human-Brain-Mr.mkv',
+      'Stock Footage provided by Fanta, from Pond5',
+    ],
+    [
+      '070409092-Neurons H264hd1080.mkv',
+      'Stock Footage provided by Lexxiam, from Pond5',
+    ],
+    [
+      '081779230-4K-Flight-International-Space- H264hd1080.mkv',
+      'Stock Footage provided by icetray, from Pond5',
+    ],
+    [
+      '086188139-Polar-Snow-Rocky-Mountains-Rid H264hd1080.mkv',
+      'Stock Footage provided by icetray, from Pond5',
+    ],
+    [
+      '092736884-Planets-Space-Jupiter-Animatio H264hd1080.mkv',
+      'Stock Footage provided by blueQmedia, from Pond5',
+    ],
+    [
+      '095990899-3D-Blue-Sci-Fi-Planet-Eye-Tunn.mkv',
+      'Stock Footage provided by davedigitalfx, from Pond5',
+    ],
+    [
+      '097957950-Space-Flight-Star-Field-Space- H264hd1080.mkv',
+      'Stock Footage provided by spieldbergo, from Pond5',
+    ],
+    [
+      '102590823-Colorful-Aurora-Borealisnorthe H264hd1080.mkv',
+      'Stock Footage provided by shanghaiface, from Pond5',
+    ],
+    [
+      '105005003-Aerial-View-Beautiful-Sunset-O H264hd1080.mkv',
+      'Stock Footage provided by TuskaTauno, from Pond5',
+    ],
+    [
+      '114624435-Dna-Strand-Genome-Image-5-A4c- H264hd1080.mkv',
+      'Stock Footage provided by bluebackimage, from Pond5',
+    ],
+    [
+      '117243532-Natural-Looking-Dna-Helices-Ro.mkv',
+      'Stock Footage provided by Elgatorojo, from Pond5',
+    ],
+    [
+      '124541114-Sci-Fi-Cosmic-Looping-Tunnel H264hd1080.mkv',
+      'Stock Footage provided by Freezman, from Pond5',
+    ],
+    [
+      '127892105-Sci-Fi-Backgrounds H264hd1080.mkv',
+      'Stock Footage provided by westockanim, from Pond5',
+    ],
+  ];
+  shuffleArray(videos);
+  let i = -1;
+  const playNextVideo = (dest) => {
+    if (i === videos.length - 1) {
+      i = -1;
+    }
+    i++;
+
+    const nexti = i === videos.length - 1 ? 0 : i + 1;
+    const video = dest === 1 ? video1 : video2;
+    const nextVideo = dest === 1 ? video2 : video1;
+    const attrib = dest === 1 ? attrib1 : attrib2;
+    const nextAttrib = dest === 1 ? attrib2 : attrib1;
+
+    const videoFile = videos[i][0];
+    const videoAttrib = videos[i][1];
+    const videoUrl = `video/${videoFile}`;
+    const nextFile = videos[nexti][0];
+    const nextUrl = `video/${nextFile}`;
+
+    if (video.src !== videoUrl) {
+      video.src = videoUrl;
+    }
+    attrib.innerText = videoAttrib;
+    attrib.style.display = 'block';
+    nextAttrib.style.display = 'none';
+    video.style.display = 'block';
+    video.play();
+
+    // Preload the next video.
+    nextVideo.src = nextUrl;
+    nextVideo.style.display = 'none';
+    nextVideo.pause();
+  };
+
+  playNextVideo();
+
+  video1.addEventListener('ended', () => {
+    playNextVideo(2);
+  });
+  video2.addEventListener('ended', () => {
+    playNextVideo(1);
+  });
+
   const ratio = 16 / 9;
   const iratio = 9 / 16;
-  const textTime = 30000;
-
-  if (width / height < ratio) {
-    width = Math.ceil(height * ratio);
-  } else if (width / height > ratio) {
-    height = Math.ceil(width * iratio);
+  let videoHeight = window.innerHeight;
+  let videoWidth = window.innerWidth;
+  if (videoWidth / videoHeight < ratio) {
+    videoWidth = Math.ceil(videoHeight * ratio);
+  } else if (videoWidth / videoHeight > ratio) {
+    videoHeight = Math.ceil(videoWidth * iratio);
   }
 
-  wolfvid.style.width = `${width}px`;
-  wolfvid.style.height = `${height}px`;
+  video1.style.width = `${videoWidth}px`;
+  video1.style.height = `${videoHeight}px`;
+  video2.style.width = `${videoWidth}px`;
+  video2.style.height = `${videoHeight}px`;
+
+  let samWidth = sam.width;
+  let samleft =
+    Math.random() * (window.innerWidth / 2 - samWidth) + window.innerWidth / 2;
+  const samSizeTime = 5000;
+  const maxSamLargeWidth = window.innerWidth;
+  const maxSamMedWidth = samWidth * 1.5;
+  const maxSamSmallWidth = 100;
+  const samPicTime = 60000;
+  const textTime = 30000;
 
   setTimeout(() => {
     sam.style.left = `${samleft}px`;
   }, 0);
 
-  const randomizeSam = () => {
+  const randomizeSamSize = () => {
     const widthRnd = Math.random() * 10;
     const maxSamWidth =
       widthRnd < 0.3
@@ -65,16 +206,30 @@ window.addEventListener('DOMContentLoaded', () => {
         ? maxSamLargeWidth
         : maxSamMedWidth;
     samWidth = Math.random() * (maxSamWidth / 2) + maxSamWidth / 2;
-    let samleft = Math.random() * (width - samWidth);
+    let samleft = Math.random() * (window.innerWidth - samWidth);
     sam.style.width = `${samWidth}px`;
     sam.style.left = `${samleft}px`;
   };
-
-  const runRandomizeSam = () => {
-    randomizeSam();
-    setTimeout(runRandomizeSam, Math.random() * samTime + samTime);
+  const runRandomizeSamSize = () => {
+    randomizeSamSize();
+    setTimeout(runRandomizeSamSize, Math.random() * samSizeTime + samSizeTime);
   };
-  setTimeout(runRandomizeSam, Math.random() * samTime + samTime);
+  setTimeout(runRandomizeSamSize, Math.random() * samSizeTime + samSizeTime);
+
+  const randomizeSamPic = () => {
+    const rnd = Math.min(Math.floor(Math.random() * 4), 3);
+    const url = `sams/sam${rnd + 1}.png`;
+    sam.classList.add('scoot-away');
+    setTimeout(() => {
+      sam.src = url;
+      sam.classList.remove('scoot-away');
+    }, 500);
+  };
+  const runRandomizeSamPic = () => {
+    randomizeSamPic();
+    setTimeout(runRandomizeSamPic, Math.random() * samPicTime + samPicTime);
+  };
+  setTimeout(runRandomizeSamPic, Math.random() * samPicTime + samPicTime);
 
   const animationSets = [
     ['animate__bounceIn', 'animate__bounceOut'],
@@ -108,6 +263,7 @@ window.addEventListener('DOMContentLoaded', () => {
     'Racial Profiling',
     'Oooh kay',
     'Lonely at the top',
+    'Bad Faith Actors',
   ];
   let lastAnimationSet = null;
   const galaxyBrainText = (set, line) => {
@@ -123,8 +279,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const { width: textWidth, height: textHeight } =
       text.getBoundingClientRect();
 
-    text.style.left = `${Math.random() * (width - textWidth)}px`;
-    text.style.top = `${Math.random() * (height - textHeight)}px`;
+    text.style.left = `${Math.random() * (window.innerWidth - textWidth)}px`;
+    text.style.top = `${Math.random() * (window.innerHeight - textHeight)}px`;
     text.classList.add(set[0]);
 
     setTimeout(() => {
