@@ -11,3 +11,4 @@ This is not a FOSS project. You are free to examine the source code, and submit 
 Videos used in this product are credited within the application, and are generously provided by:
 
 - https://www.pond5.com/
+- https://esahubble.org/

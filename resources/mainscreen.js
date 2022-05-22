@@ -29,100 +29,115 @@ window.addEventListener('DOMContentLoaded', () => {
   const videos = [
     [
       '012389379-Sheep-Domestic-Herd-Hd9233.mkv',
-      'Stock Footage provided by RockyMountain, from Pond5',
+      'Footage provided by RockyMountain, from Pond5',
     ],
     [
       '040329964-Flight-Galaxy.mkv',
-      'Stock Footage provided by kastomazer, from Pond5',
+      'Footage provided by kastomazer, from Pond5',
     ],
     [
       '041069487-Time-Lapse-Pan-Mountain-Range-.mkv',
-      'Stock Footage provided by MountAiryFilms, from Pond5',
+      'Footage provided by MountAiryFilms, from Pond5',
     ],
     [
       '042686187-Starry-Night-Mountains-Timelap.mkv',
-      'Stock Footage provided by Viktar_Malyshchyts, from Pond5',
+      'Footage provided by Viktar_Malyshchyts, from Pond5',
     ],
     [
       '045015535-Solar-Storm-Northern-Lights-Ar.mkv',
-      'Stock Footage provided by erectus, from Pond5',
+      'Footage provided by erectus, from Pond5',
     ],
     [
       '046274647-Neurons-3D-Animation-Blue-Back.mkv',
-      'Stock Footage provided by bildDOTbewegung, from Pond5',
+      'Footage provided by bildDOTbewegung, from Pond5',
     ],
     [
       '047161060-Sketches-Space-Planetary-Nebul.mkv',
-      'Stock Footage provided by selfox, from Pond5',
+      'Footage provided by selfox, from Pond5',
     ],
     [
       '052301651-Nubble-Lighthouse-Milky-Way-Ri H264hd1080.mkv',
-      'Stock Footage provided by MikeVersprill, from Pond5',
+      'Footage provided by MikeVersprill, from Pond5',
     ],
     [
       '055266591-Hurricane-Tornado-Over-Earth-S H264hd1080.mkv',
-      'Stock Footage provided by Merlin74, from Pond5',
+      'Footage provided by Merlin74, from Pond5',
     ],
     [
       '057032995-Milky-Way-Over-Trees-Yosemite-.mkv',
-      'Stock Footage provided by maikthomas, from Pond5',
+      'Footage provided by maikthomas, from Pond5',
     ],
     [
       '057718207-Carina-Nebula-3-Dimensions-Hd.mkv',
-      'Stock Footage provided by Rebus_Productions, from Pond5',
+      'Footage provided by Rebus_Productions, from Pond5',
     ],
     [
       '061744311-Doctor-Examines-Human-Brain-Mr.mkv',
-      'Stock Footage provided by Fanta, from Pond5',
+      'Footage provided by Fanta, from Pond5',
     ],
     [
       '070409092-Neurons H264hd1080.mkv',
-      'Stock Footage provided by Lexxiam, from Pond5',
+      'Footage provided by Lexxiam, from Pond5',
     ],
     [
       '081779230-4K-Flight-International-Space- H264hd1080.mkv',
-      'Stock Footage provided by icetray, from Pond5',
+      'Footage provided by icetray, from Pond5',
     ],
     [
       '086188139-Polar-Snow-Rocky-Mountains-Rid H264hd1080.mkv',
-      'Stock Footage provided by icetray, from Pond5',
+      'Footage provided by icetray, from Pond5',
     ],
     [
       '092736884-Planets-Space-Jupiter-Animatio H264hd1080.mkv',
-      'Stock Footage provided by blueQmedia, from Pond5',
+      'Footage provided by blueQmedia, from Pond5',
     ],
     [
       '095990899-3D-Blue-Sci-Fi-Planet-Eye-Tunn.mkv',
-      'Stock Footage provided by davedigitalfx, from Pond5',
+      'Footage provided by davedigitalfx, from Pond5',
     ],
     [
       '097957950-Space-Flight-Star-Field-Space- H264hd1080.mkv',
-      'Stock Footage provided by spieldbergo, from Pond5',
+      'Footage provided by spieldbergo, from Pond5',
     ],
     [
       '102590823-Colorful-Aurora-Borealisnorthe H264hd1080.mkv',
-      'Stock Footage provided by shanghaiface, from Pond5',
+      'Footage provided by shanghaiface, from Pond5',
     ],
     [
       '105005003-Aerial-View-Beautiful-Sunset-O H264hd1080.mkv',
-      'Stock Footage provided by TuskaTauno, from Pond5',
+      'Footage provided by TuskaTauno, from Pond5',
     ],
     [
       '114624435-Dna-Strand-Genome-Image-5-A4c- H264hd1080.mkv',
-      'Stock Footage provided by bluebackimage, from Pond5',
+      'Footage provided by bluebackimage, from Pond5',
     ],
     [
       '117243532-Natural-Looking-Dna-Helices-Ro.mkv',
-      'Stock Footage provided by Elgatorojo, from Pond5',
+      'Footage provided by Elgatorojo, from Pond5',
     ],
     [
       '124541114-Sci-Fi-Cosmic-Looping-Tunnel H264hd1080.mkv',
-      'Stock Footage provided by Freezman, from Pond5',
+      'Footage provided by Freezman, from Pond5',
     ],
     [
       '127892105-Sci-Fi-Backgrounds H264hd1080.mkv',
-      'Stock Footage provided by westockanim, from Pond5',
+      'Footage provided by westockanim, from Pond5',
     ],
+    ['Heic1603a.mkv', 'Footage provided by ESA/Hubble, M. Kornmesser'],
+    [
+      'Heic1712a.mkv',
+      'Footage provided by ESA/Hubble, Digitized Sky Survey, Nick Risinger (skysurvey.org)',
+    ],
+    [
+      'Heic1712b.mkv',
+      'Footage provided by ESA/Hubble, Digitized Sky Survey, Nick Risinger (skysurvey.org)',
+    ],
+    ['Heic1717b.mkv', 'Footage provided by ESO/L. Calçada'],
+    ['Hubblecast43b.mkv', 'Footage provided by ESA/Hubble (M. Kornmesser)'],
+    ['Hubblecast43c.mkv', 'Footage provided by ESA/Hubble (M. Kornmesser)'],
+    ['Hubblecast64b.mkv', 'Footage provided by ESA/Hubble (L. Calçada)'],
+    ['Hubblecast64c.mkv', 'Footage provided by ESA/Hubble (M. Kornmesser)'],
+    ['Hubblecast70b.mkv', 'Footage provided by ESA/Hubble and M. Kornmesser'],
   ];
   shuffleArray(videos);
   let i = -1;

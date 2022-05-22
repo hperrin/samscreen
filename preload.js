@@ -1,8 +1,11 @@
-window.addEventListener('DOMContentLoaded', () => {
-  // document.body.requestPointerLock();
+// window.addEventListener('DOMContentLoaded', () => {
+//   setTimeout(() => {
+//     document.body.requestPointerLock();
 
-  document.body.focus();
-});
+//     window.focus();
+//     document.body.focus();
+//   }, 750);
+// });
 
 // window.addEventListener('beforeunload', () => {
 //   document.exitPointerLock();

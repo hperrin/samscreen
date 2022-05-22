@@ -3,10 +3,12 @@ const { app, BrowserWindow } = require('electron');
 
 const createWindow = () => {
   const win = new BrowserWindow({
+    backgroundColor: '#000',
     fullscreen: true,
     alwaysOnTop: true,
     resizable: false,
     movable: false,
+    focusable: true,
     minimizable: false,
     maximizable: false,
     skipTaskbar: true,
@@ -19,11 +21,12 @@ const createWindow = () => {
 
   win.setAlwaysOnTop(true, 'screen-saver', 0);
   win.removeMenu();
-  // win.webContents.openDevTools();
 
-  setTimeout(() => {
-    win.focus();
-  }, 0);
+  win.on('closed', () => {
+    app.quit();
+  });
+
+  // win.webContents.openDevTools();
 };
 
 app.whenReady().then(() => {
@@ -32,4 +35,9 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', () => {
   app.quit();
+});
+
+app.on('browser-window-created', (_event, win) => {
+  win.focus();
+  win.webContents.focus();
 });

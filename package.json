@@ -6,6 +6,7 @@
   "scripts": {
     "format": "prettier --write --ignore-unknown .",
     "start": "electron .",
+    "build": "electron-builder build --win=portable",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,9 +20,13 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "electron": "^18.2.4",
+    "electron-builder": "^23.0.3",
     "prettier": "^2.6.2"
   },
   "dependencies": {
     "animate.css": "^4.1.1"
+  },
+  "build": {
+    "appId": "com.hperrin.SamScreen"
   }
 }
