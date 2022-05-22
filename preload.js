@@ -1,12 +1,5 @@
-// window.addEventListener('DOMContentLoaded', () => {
-//   setTimeout(() => {
-//     document.body.requestPointerLock();
+const { contextBridge, ipcRenderer } = require('electron');
 
-//     window.focus();
-//     document.body.focus();
-//   }, 750);
-// });
-
-// window.addEventListener('beforeunload', () => {
-//   document.exitPointerLock();
-// });
+contextBridge.exposeInMainWorld('electronAPI', {
+  hideCursor: () => ipcRenderer.send('hide-cursor'),
+});

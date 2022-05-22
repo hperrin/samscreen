@@ -24,6 +24,7 @@
     "prettier": "^2.6.2"
   },
   "dependencies": {
+    "@tigerconnect/ffi-napi": "^4.0.3-tc3",
     "animate.css": "^4.1.1"
   },
   "build": {

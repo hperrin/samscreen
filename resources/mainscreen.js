@@ -9,6 +9,8 @@ function shuffleArray(array) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  window.electronAPI.hideCursor();
+
   const video1 = document.getElementById('video1');
   const video2 = document.getElementById('video2');
   const attrib1 = document.getElementById('attrib1');
