@@ -34,10 +34,6 @@ window.addEventListener('DOMContentLoaded', () => {
       'Footage provided by RockyMountain, from Pond5',
     ],
     [
-      '040329964-Flight-Galaxy.mkv',
-      'Footage provided by kastomazer, from Pond5',
-    ],
-    [
       '041069487-Time-Lapse-Pan-Mountain-Range-.mkv',
       'Footage provided by MountAiryFilms, from Pond5',
     ],
@@ -82,20 +78,8 @@ window.addEventListener('DOMContentLoaded', () => {
       'Footage provided by Lexxiam, from Pond5',
     ],
     [
-      '081779230-4K-Flight-International-Space- H264hd1080.mkv',
-      'Footage provided by icetray, from Pond5',
-    ],
-    [
       '086188139-Polar-Snow-Rocky-Mountains-Rid H264hd1080.mkv',
       'Footage provided by icetray, from Pond5',
-    ],
-    [
-      '092736884-Planets-Space-Jupiter-Animatio H264hd1080.mkv',
-      'Footage provided by blueQmedia, from Pond5',
-    ],
-    [
-      '095990899-3D-Blue-Sci-Fi-Planet-Eye-Tunn.mkv',
-      'Footage provided by davedigitalfx, from Pond5',
     ],
     [
       '097957950-Space-Flight-Star-Field-Space- H264hd1080.mkv',
@@ -120,10 +104,6 @@ window.addEventListener('DOMContentLoaded', () => {
     [
       '124541114-Sci-Fi-Cosmic-Looping-Tunnel H264hd1080.mkv',
       'Footage provided by Freezman, from Pond5',
-    ],
-    [
-      '127892105-Sci-Fi-Backgrounds H264hd1080.mkv',
-      'Footage provided by westockanim, from Pond5',
     ],
     ['Heic1603a.mkv', 'Footage provided by ESA/Hubble, M. Kornmesser'],
     [
